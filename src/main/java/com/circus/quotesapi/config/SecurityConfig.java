@@ -43,6 +43,7 @@ public class SecurityConfig {
         return http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/h2-console/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/quotes/**").hasAnyRole("ADMIN", "READER")
                         .requestMatchers(HttpMethod.POST, "/api/quotes/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
