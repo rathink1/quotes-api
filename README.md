@@ -38,6 +38,9 @@ export READER_PASSWORD=reader_password
 ```
 Or use AWS Secrets Manager or Parameter Store for sensitive credentials.
 
+Also note that since IntelliJ Http Format comes with IntelliJ Ultimate, which I don't have (using community edition), 
+hence providing cURL requests here.
+
 ### Create Quote (Admin only)
 ```bash
 curl -X POST http://localhost:8080/api/quotes \
